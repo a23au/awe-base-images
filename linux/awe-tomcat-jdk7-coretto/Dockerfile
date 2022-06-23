@@ -1,4 +1,4 @@
-FROM tomcat:8.5.78-jdk8-corretto
+FROM tomcat:8-jdk8-corretto
 
 RUN yum remove -y java-1.8.0-amazon-corretto-devel && \
     yum update -y && \
