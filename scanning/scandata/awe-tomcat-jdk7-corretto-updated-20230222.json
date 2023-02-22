@@ -1,0 +1,208 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "jercle/awe-tomcat-jdk7-corretto",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "amazon",
+      "Name": "2 (Karoo)"
+    },
+    "ImageID": "sha256:31f8d8db185565575829efb11fd9bde91ad153fa7ce56ef9b955ea7bab399d4a",
+    "DiffIDs": [
+      "sha256:c895c159af8689acfef8c51ffc51a182dd6dd4d4f653acddcaac77441cf9ca37",
+      "sha256:ef7c5fe2cbbcc1c6a3652e8f40dca57269c7be726e7bbadcb67594caa0b08d62",
+      "sha256:1ea74e906b64ca3c0b97fb72fe0fd8f57327253c9575e53436f190676fd22d3d",
+      "sha256:cea396b9c0a20060c548f78d0b151c2b9ad4965e26536417b0b4419ccbe19c46",
+      "sha256:a1398fefb9627e2a33650b2295638d9d61f9850e3bea6f7d49e828482c02a826",
+      "sha256:fce5a1c04e256fcfd2de39a71145663cfc64f2d70088735d7065813afc3145c8",
+      "sha256:36ce24344d5ee1ad0ace5c6bf61d2d885dcfbefbfcb847e5633a59bd3b6034ee"
+    ],
+    "RepoTags": [
+      "jercle/awe-tomcat-jdk7-corretto:1.0.12",
+      "jercle/awe-tomcat-jdk7-corretto:latest"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2023-02-22T03:43:58.732859403Z",
+      "history": [
+        {
+          "created": "2023-02-16T21:20:09Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:29cd40b7c56d98385ece53bcbadfefd25bc70ccf0326777986ef6a5720bdfe83 in / "
+        },
+        {
+          "created": "2023-02-16T21:20:10Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T21:38:58Z",
+          "created_by": "/bin/sh -c #(nop)  ARG version=1.8.0_362.b08-1",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T21:39:19Z",
+          "created_by": "|1 version=1.8.0_362.b08-1 /bin/sh -c set -eux     \u0026\u0026 export GNUPGHOME=\"$(mktemp -d)\"     \u0026\u0026 curl -fL -o corretto.key https://yum.corretto.aws/corretto.key     \u0026\u0026 gpg --batch --import corretto.key     \u0026\u0026 gpg --batch --export --armor '6DC3636DAE534049C8B94623A122542AB04F24E3' \u003e corretto.key     \u0026\u0026 rpm --import corretto.key     \u0026\u0026 rm -r \"$GNUPGHOME\" corretto.key     \u0026\u0026 curl -fL -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo     \u0026\u0026 grep -q '^gpgcheck=1' /etc/yum.repos.d/corretto.repo     \u0026\u0026 echo \"priority=9\" \u003e\u003e /etc/yum.repos.d/corretto.repo     \u0026\u0026 yum install -y java-1.8.0-amazon-corretto-devel-$version     \u0026\u0026 (find /usr/lib/jvm/java-1.8.0-amazon-corretto -name src.zip -delete || true)     \u0026\u0026 yum install -y fontconfig     \u0026\u0026 yum clean all"
+        },
+        {
+          "created": "2023-02-16T21:39:19Z",
+          "created_by": "/bin/sh -c #(nop)  ENV LANG=C.UTF-8",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T21:39:20Z",
+          "created_by": "/bin/sh -c #(nop)  ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:36:09Z",
+          "created_by": "/bin/sh -c #(nop)  ENV CATALINA_HOME=/usr/local/tomcat",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:36:09Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:36:10Z",
+          "created_by": "/bin/sh -c mkdir -p \"$CATALINA_HOME\""
+        },
+        {
+          "created": "2023-02-16T22:36:10Z",
+          "created_by": "/bin/sh -c #(nop) WORKDIR /usr/local/tomcat",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:36:10Z",
+          "created_by": "/bin/sh -c #(nop)  ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:36:10Z",
+          "created_by": "/bin/sh -c #(nop)  ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:39:02Z",
+          "created_by": "/bin/sh -c #(nop)  ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 5C3C5F3E314C866292F359A8F3AD5C94A67F707E 765908099ACF92702C7D949BFA0C35EA8AA299F1 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:39:02Z",
+          "created_by": "/bin/sh -c #(nop)  ENV TOMCAT_MAJOR=8",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:39:02Z",
+          "created_by": "/bin/sh -c #(nop)  ENV TOMCAT_VERSION=8.5.85",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:39:02Z",
+          "created_by": "/bin/sh -c #(nop)  ENV TOMCAT_SHA512=0fc44133aff9e7e31d6dbb4b6e204d33bd0009b6bd089e5f8c8a1f7dfe7c5feff25d7f6404c4a3c5610e0960b5d0198580171212a2636816a23e21799a4c0467",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:39:43Z",
+          "created_by": "/bin/sh -c set -eux; \t\tif ! command -v yumdb \u003e /dev/null; then \t\tyum install -y --setopt=skip_missing_names_on_install=False yum-utils; \t\tyumdb set reason dep yum-utils; \tfi; \t_yum_install_temporary() { ( set -eu +x; \t\tlocal pkg todo=''; \t\tfor pkg; do \t\t\tif ! rpm --query \"$pkg\" \u003e /dev/null 2\u003e\u00261; then \t\t\t\ttodo=\"$todo $pkg\"; \t\t\tfi; \t\tdone; \t\tif [ -n \"$todo\" ]; then \t\t\tset -x; \t\t\tyum install -y --setopt=skip_missing_names_on_install=False $todo; \t\t\tyumdb set reason dep $todo; \t\tfi; \t) }; \t_yum_install_temporary gzip tar; \t\tddist() { \t\tlocal f=\"$1\"; shift; \t\tlocal distFile=\"$1\"; shift; \t\tlocal mvnFile=\"${1:-}\"; \t\tlocal success=; \t\tlocal distUrl=; \t\tfor distUrl in \t\t\t\"https://www.apache.org/dyn/closer.cgi?action=download\u0026filename=$distFile\" \t\t\t\"https://downloads.apache.org/$distFile\" \t\t\t\"https://www-us.apache.org/dist/$distFile\" \t\t\t\"https://www.apache.org/dist/$distFile\" \t\t\t\"https://archive.apache.org/dist/$distFile\" \t\t\t${mvnFile:+\"https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/$mvnFile\"} \t\t; do \t\t\tif curl -fL -o \"$f\" \"$distUrl\" \u0026\u0026 [ -s \"$f\" ]; then \t\t\t\tsuccess=1; \t\t\t\tbreak; \t\t\tfi; \t\tdone; \t\t[ -n \"$success\" ]; \t}; \t\tddist 'tomcat.tar.gz' \"tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz\" \"$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz\"; \techo \"$TOMCAT_SHA512 *tomcat.tar.gz\" | sha512sum --strict --check -; \tddist 'tomcat.tar.gz.asc' \"tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc\" \"$TOMCAT_VERSION/tomcat-$TOMCAT_VERSION.tar.gz.asc\"; \texport GNUPGHOME=\"$(mktemp -d)\"; \tfor key in $GPG_KEYS; do \t\tgpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\"; \tdone; \tgpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; \ttar -xf tomcat.tar.gz --strip-components=1; \trm bin/*.bat; \trm tomcat.tar.gz*; \tcommand -v gpgconf \u0026\u0026 gpgconf --kill all || :; \trm -rf \"$GNUPGHOME\"; \t\tmv webapps webapps.dist; \tmkdir webapps; \t\tnativeBuildDir=\"$(mktemp -d)\"; \ttar -xf bin/tomcat-native.tar.gz -C \"$nativeBuildDir\" --strip-components=1; \t_yum_install_temporary \t\tapr-devel \t\tgcc \t\tmake \t\topenssl11-devel \t; \t( \t\texport CATALINA_HOME=\"$PWD\"; \t\tcd \"$nativeBuildDir/native\"; \t\taprConfig=\"$(command -v apr-1-config)\"; \t\t./configure \t\t\t--libdir=\"$TOMCAT_NATIVE_LIBDIR\" \t\t\t--prefix=\"$CATALINA_HOME\" \t\t\t--with-apr=\"$aprConfig\" \t\t\t--with-java-home=\"$JAVA_HOME\" \t\t\t--with-ssl \t\t; \t\tnproc=\"$(nproc)\"; \t\tmake -j \"$nproc\"; \t\tmake install; \t); \trm -rf \"$nativeBuildDir\"; \trm bin/tomcat-native.tar.gz; \t\tfind \"$TOMCAT_NATIVE_LIBDIR\" -type f -executable -exec ldd '{}' ';' \t\t| awk '/=\u003e/ \u0026\u0026 $(NF-1) != \"=\u003e\" { print $(NF-1) }' \t\t| xargs -rt readlink -e \t\t| sort -u \t\t| xargs -rt rpm --query --whatprovides \t\t| sort -u \t\t| tee \"$TOMCAT_NATIVE_LIBDIR/.dependencies.txt\" \t\t| xargs -r yumdb set reason user \t; \t\tyum autoremove -y; \tyum clean all; \trm -rf /var/cache/yum; \t\tfind ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; \t\tchmod -R +rX .; \tchmod 777 logs temp work; \t\tcatalina.sh version"
+        },
+        {
+          "created": "2023-02-16T22:39:44Z",
+          "created_by": "/bin/sh -c set -eux; \tnativeLines=\"$(catalina.sh configtest 2\u003e\u00261)\"; \tnativeLines=\"$(echo \"$nativeLines\" | grep 'Apache Tomcat Native')\"; \tnativeLines=\"$(echo \"$nativeLines\" | sort -u)\"; \tif ! echo \"$nativeLines\" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' \u003e\u00262; then \t\techo \u003e\u00262 \"$nativeLines\"; \t\texit 1; \tfi"
+        },
+        {
+          "created": "2023-02-16T22:39:44Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 8080",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-16T22:39:44Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"catalina.sh\" \"run\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-22T03:43:57Z",
+          "created_by": "RUN /bin/sh -c yum remove -y java-1.8.0-amazon-corretto-devel \u0026\u0026     yum update -y \u0026\u0026     yum install -y java-1.7.0-openjdk \u0026\u0026     yum clean all \u0026\u0026     rm -rf /usr/lib/jvm/java-1.8.0-amazon-corretto \u0026\u0026     rm -rf /var/cache/yum # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-02-22T03:43:58Z",
+          "created_by": "ENV JAVA_HOME=/usr/lib/jvm/jre-1.7.0-openjdk",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-22T03:43:58Z",
+          "created_by": "ENV RUN_USER=tomcat",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-22T03:43:58Z",
+          "created_by": "ENV RUN_GROUP=tomcat",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-22T03:43:58Z",
+          "created_by": "RUN /bin/sh -c groupadd -r ${RUN_GROUP} \u0026\u0026 useradd -g ${RUN_GROUP} -d ${CATALINA_HOME} -s /bin/bash ${RUN_USER} \u0026\u0026     chown -R tomcat:tomcat $CATALINA_HOME # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-02-22T03:43:58Z",
+          "created_by": "USER tomcat",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-02-22T03:43:58Z",
+          "created_by": "EXPOSE map[8080/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:c895c159af8689acfef8c51ffc51a182dd6dd4d4f653acddcaac77441cf9ca37",
+          "sha256:ef7c5fe2cbbcc1c6a3652e8f40dca57269c7be726e7bbadcb67594caa0b08d62",
+          "sha256:1ea74e906b64ca3c0b97fb72fe0fd8f57327253c9575e53436f190676fd22d3d",
+          "sha256:cea396b9c0a20060c548f78d0b151c2b9ad4965e26536417b0b4419ccbe19c46",
+          "sha256:a1398fefb9627e2a33650b2295638d9d61f9850e3bea6f7d49e828482c02a826",
+          "sha256:fce5a1c04e256fcfd2de39a71145663cfc64f2d70088735d7065813afc3145c8",
+          "sha256:36ce24344d5ee1ad0ace5c6bf61d2d885dcfbefbfcb847e5633a59bd3b6034ee"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "catalina.sh",
+          "run"
+        ],
+        "Env": [
+          "PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "LANG=C.UTF-8",
+          "JAVA_HOME=/usr/lib/jvm/jre-1.7.0-openjdk",
+          "CATALINA_HOME=/usr/local/tomcat",
+          "TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib",
+          "LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib",
+          "GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 5C3C5F3E314C866292F359A8F3AD5C94A67F707E 765908099ACF92702C7D949BFA0C35EA8AA299F1 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23",
+          "TOMCAT_MAJOR=8",
+          "TOMCAT_VERSION=8.5.85",
+          "TOMCAT_SHA512=0fc44133aff9e7e31d6dbb4b6e204d33bd0009b6bd089e5f8c8a1f7dfe7c5feff25d7f6404c4a3c5610e0960b5d0198580171212a2636816a23e21799a4c0467",
+          "RUN_USER=tomcat",
+          "RUN_GROUP=tomcat"
+        ],
+        "User": "tomcat",
+        "WorkingDir": "/usr/local/tomcat"
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "jercle/awe-tomcat-jdk7-corretto (amazon 2 (Karoo))",
+      "Class": "os-pkgs",
+      "Type": "amazon"
+    }
+  ]
+}

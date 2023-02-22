@@ -1,6 +1,24 @@
 # Changelog
 All notable changes to these images will be documented in this file.
 
+## [1.0.12] - 2023-02-22
+* Updates to to resolve https://github.com/a23au/awe-base-images/issues/23 for the following CVEs:
+
+ * CVE-2023-23914
+ * CVE-2023-23915
+ * CVE-2022-4203
+ * CVE-2022-4304
+ * CVE-2023-23916
+ * CVE-2022-4450
+ * CVE-2023-0215
+ * CVE-2023-0216
+ * CVE-2023-0217
+ * CVE-2023-0401
+ * CVE-2022-24963
+ * CVE-2022-28331
+ * CVE-2022-25147
+ * CVE-2023-0286
+
 ## [1.0.11] - 2023-01-23
 * Updates to libcurl and krb5-libs on alpine based images to resolve following CVEs:
 

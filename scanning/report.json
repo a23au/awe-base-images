@@ -1,0 +1,1027 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "jercle/awe-httpd-base:1.0.11",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.17.1"
+    },
+    "ImageID": "sha256:2a62eca43c1ca53b321268d838a796e0a59f50cd7ea8dbae795b5a4fd79c9377",
+    "DiffIDs": [
+      "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88",
+      "sha256:76e789f8b8e612e9803b0fe3bd0b43add3579a2a3cc92b341027c1a9a7624681",
+      "sha256:fd423dbc9ddc3140399bfb4dcd4610c96a5ee2d95acf8e155db7cf51f1f9e652",
+      "sha256:105e83b9f61622fb3a91ce62e80d15e79b03fd2d697e47b12adb5f66f1b2c9ec",
+      "sha256:1f5dc4f181643a933ada1c79e1bfc215b1c3ec1c1bb1d315dd712d0946425bab",
+      "sha256:6bae15b283831aa768131b1a8c929bde31426f500ffcb660de5e0b2f2d1c4a81",
+      "sha256:6b30d718e2512b39f35905825368b348fa512a3ca52aaa59140984379fcd6244",
+      "sha256:510d3c79a933b9337350c8857c68870691250253183494d80d5898213ecf7522"
+    ],
+    "RepoTags": [
+      "jercle/awe-httpd-base:1.0.11"
+    ],
+    "RepoDigests": [
+      "jercle/awe-httpd-base@sha256:515288935951c2a22bd519acdbdadb08468ffe355fe0a938c2f2f1eb7f6305ac"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2023-01-23T01:46:02.272196852Z",
+      "history": [
+        {
+          "created": "2023-01-09T17:05:20Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:e4d600fc4c9c293efe360be7b30ee96579925d1b4634c94332e2ec73f7d8eca1 in / "
+        },
+        {
+          "created": "2023-01-09T17:05:20Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-09T18:25:40Z",
+          "created_by": "/bin/sh -c set -x \t\u0026\u0026 adduser -u 82 -D -S -G www-data www-data"
+        },
+        {
+          "created": "2023-01-09T18:25:40Z",
+          "created_by": "/bin/sh -c #(nop)  ENV HTTPD_PREFIX=/usr/local/apache2",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-09T18:25:41Z",
+          "created_by": "/bin/sh -c #(nop)  ENV PATH=/usr/local/apache2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-09T18:25:41Z",
+          "created_by": "/bin/sh -c mkdir -p \"$HTTPD_PREFIX\" \t\u0026\u0026 chown www-data:www-data \"$HTTPD_PREFIX\""
+        },
+        {
+          "created": "2023-01-09T18:25:41Z",
+          "created_by": "/bin/sh -c #(nop) WORKDIR /usr/local/apache2",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-09T18:25:43Z",
+          "created_by": "/bin/sh -c set -eux; \tapk add --no-cache \t\tapr \t\tapr-util \t\tapr-util-ldap \t\tca-certificates \t\tperl \t;"
+        },
+        {
+          "created": "2023-01-09T18:25:43Z",
+          "created_by": "/bin/sh -c #(nop)  ENV HTTPD_VERSION=2.4.54",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-09T18:25:44Z",
+          "created_by": "/bin/sh -c #(nop)  ENV HTTPD_SHA256=eb397feeefccaf254f8d45de3768d9d68e8e73851c49afd5b7176d1ecf80c340",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-09T18:25:44Z",
+          "created_by": "/bin/sh -c #(nop)  ENV HTTPD_PATCHES=",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-09T18:26:56Z",
+          "created_by": "/bin/sh -c set -eux; \t\tapk add --no-cache --virtual .build-deps \t\tapr-dev \t\tapr-util-dev \t\tcoreutils \t\tdpkg-dev dpkg \t\tgcc \t\tgnupg \t\tlibc-dev \t\tcurl-dev \t\tjansson-dev \t\tlibxml2-dev \t\tlua-dev \t\tmake \t\tnghttp2-dev \t\topenssl \t\topenssl-dev \t\tpcre-dev \t\ttar \t\tzlib-dev \t\tbrotli-dev \t; \t\tddist() { \t\tlocal f=\"$1\"; shift; \t\tlocal distFile=\"$1\"; shift; \t\tlocal success=; \t\tlocal distUrl=; \t\tfor distUrl in \t\t\t'https://www.apache.org/dyn/closer.cgi?action=download\u0026filename=' \t\t\thttps://downloads.apache.org/ \t\t\thttps://www-us.apache.org/dist/ \t\t\thttps://www.apache.org/dist/ \t\t\thttps://archive.apache.org/dist/ \t\t; do \t\t\tif wget -O \"$f\" \"$distUrl$distFile\" \u0026\u0026 [ -s \"$f\" ]; then \t\t\t\tsuccess=1; \t\t\t\tbreak; \t\t\tfi; \t\tdone; \t\t[ -n \"$success\" ]; \t}; \t\tddist 'httpd.tar.bz2' \"httpd/httpd-$HTTPD_VERSION.tar.bz2\"; \techo \"$HTTPD_SHA256 *httpd.tar.bz2\" | sha256sum -c -; \t\tddist 'httpd.tar.bz2.asc' \"httpd/httpd-$HTTPD_VERSION.tar.bz2.asc\"; \texport GNUPGHOME=\"$(mktemp -d)\"; \tfor key in \t\tDE29FB3971E71543FD2DC049508EAEC5302DA568 \t\t13155B0E9E634F42BF6C163FDDBA64BA2C312D2F \t\t8B39757B1D8A994DF2433ED58B3A601F08C975E5 \t\t31EE1A81B8D066548156D37B7D6DBFD1F08E012A \t\tA10208FEC3152DD7C0C9B59B361522D782AB7BD1 \t\t3DE024AFDA7A4B15CB6C14410F81AA8AB0D5F771 \t\tEB138C6AF0FC691001B16D93344A844D751D7F27 \t\tCBA5A7C21EC143314C41393E5B968010E04F9A89 \t\t3C016F2B764621BB549C66B516A96495E2226795 \t\t937FB3994A242BA9BF49E93021454AF0CC8B0F7E \t\tEAD1359A4C0F2D37472AAF28F55DF0293A4E7AC9 \t\t4C1EADADB4EF5007579C919C6635B6C0DE885DD3 \t\t01E475360FCCF1D0F24B9D145D414AE1E005C9CB \t\t92CCEF0AA7DD46AC3A0F498BCA6939748103A37E \t\tD395C7573A68B9796D38C258153FA0CD75A67692 \t\tFA39B617B61493FD283503E7EED1EA392261D073 \t\t984FB3350C1D5C7A3282255BB31B213D208F5064 \t\tFE7A49DAA875E890B4167F76CCB2EB46E76CF6D0 \t\t39F6691A0ECF0C50E8BB849CF78875F642721F00 \t\t29A2BA848177B73878277FA475CAA2A3F39B3750 \t\t120A8667241AEDD4A78B46104C042818311A3DE5 \t\t453510BDA6C5855624E009236D0BC73A40581837 \t\t0DE5C55C6BF3B2352DABB89E13249B4FEC88A0BF \t\t7CDBED100806552182F98844E8E7E00B4DAA1988 \t\tA8BA9617EF3BCCAC3B29B869EDB105896F9522D8 \t\t3E6AC004854F3A7F03566B592FF06894E55B0D0E \t\t5B5181C2C0AB13E59DA3F7A3EC582EB639FF092C \t\tA93D62ECC3C8EA12DB220EC934EA76E6791485A8 \t\t65B2D44FE74BD5E3DE3AC3F082781DE46D5954FA \t\t8935926745E1CE7E3ED748F6EC99EE267EB5F61A \t\tE3480043595621FE56105F112AB12A7ADC55C003 \t\t93525CFCF6FDFFB3FD9700DD5A4B10AE43B56A27 \t\tC55AB7B9139EB2263CD1AABC19B033D1760C227B \t\t26F51EF9A82F4ACB43F1903ED377C9E7D1944C66 \t; do \t\tgpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\"; \tdone; \tgpg --batch --verify httpd.tar.bz2.asc httpd.tar.bz2; \tcommand -v gpgconf \u0026\u0026 gpgconf --kill all || :; \trm -rf \"$GNUPGHOME\" httpd.tar.bz2.asc; \t\tmkdir -p src; \ttar -xf httpd.tar.bz2 -C src --strip-components=1; \trm httpd.tar.bz2; \tcd src; \t\tpatches() { \t\twhile [ \"$#\" -gt 0 ]; do \t\t\tlocal patchFile=\"$1\"; shift; \t\t\tlocal patchSha256=\"$1\"; shift; \t\t\tddist \"$patchFile\" \"httpd/patches/apply_to_$HTTPD_VERSION/$patchFile\"; \t\t\techo \"$patchSha256 *$patchFile\" | sha256sum -c -; \t\t\tpatch -p0 \u003c \"$patchFile\"; \t\t\trm -f \"$patchFile\"; \t\tdone; \t}; \tpatches $HTTPD_PATCHES; \t\tgnuArch=\"$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)\"; \t./configure \t\t--build=\"$gnuArch\" \t\t--prefix=\"$HTTPD_PREFIX\" \t\t--enable-mods-shared=reallyall \t\t--enable-mpms-shared=all \t; \tmake -j \"$(nproc)\"; \tmake install; \t\tcd ..; \trm -r src man manual; \t\tsed -ri \t\t-e 's!^(\\s*CustomLog)\\s+\\S+!\\1 /proc/self/fd/1!g' \t\t-e 's!^(\\s*ErrorLog)\\s+\\S+!\\1 /proc/self/fd/2!g' \t\t-e 's!^(\\s*TransferLog)\\s+\\S+!\\1 /proc/self/fd/1!g' \t\t-e 's!^(\\s*User)\\s+daemon\\s*$!\\1 www-data!g' \t\t-e 's!^(\\s*Group)\\s+daemon\\s*$!\\1 www-data!g' \t\t\"$HTTPD_PREFIX/conf/httpd.conf\" \t\t\"$HTTPD_PREFIX/conf/extra/httpd-ssl.conf\" \t; \tgrep -E '^\\s*User www-data$' \"$HTTPD_PREFIX/conf/httpd.conf\"; \tgrep -E '^\\s*Group www-data$' \"$HTTPD_PREFIX/conf/httpd.conf\"; \t\tdeps=\"$( \t\tscanelf --needed --nobanner --format '%n#p' --recursive /usr/local \t\t\t| tr ',' '\\n' \t\t\t| sort -u \t\t\t| awk 'system(\"[ -e /usr/local/lib/\" $1 \" ]\") == 0 { next } { print \"so:\" $1 }' \t)\"; \tapk add --no-network --virtual .httpd-so-deps $deps; \tapk del --no-network .build-deps; \t\thttpd -v"
+        },
+        {
+          "created": "2023-01-09T18:26:56Z",
+          "created_by": "/bin/sh -c #(nop)  STOPSIGNAL SIGWINCH",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-09T18:26:56Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:c432ff61c4993ecdef4786f48d91a96f8f0707f6179816ccb98db661bfb96b90 in /usr/local/bin/ "
+        },
+        {
+          "created": "2023-01-09T18:26:56Z",
+          "created_by": "/bin/sh -c #(nop)  EXPOSE 80",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-09T18:26:56Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"httpd-foreground\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-23T01:46:02Z",
+          "created_by": "LABEL project=awe-dmz-migration",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-23T01:46:02Z",
+          "created_by": "LABEL type=base",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-23T01:46:02Z",
+          "created_by": "RUN /bin/sh -c apk upgrade --no-cache \u0026\u0026   rm -rf /usr/local/apache2/cgi-bin/ \u0026\u0026   mkdir /usr/local/apache2/cgi-bin/ \u0026\u0026   mkdir /app \u0026\u0026   chown -R www-data:www-data   /usr/local/apache2/logs   /usr/local/apache2/cgi-bin/   /app \u0026\u0026   chmod -R 500 /usr/local/apache2/cgi-bin/ \u0026\u0026   chmod -R 700 /app   /usr/local/apache2/logs \u0026\u0026   rm /usr/local/apache2/htdocs/index.html # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-01-23T01:46:02Z",
+          "created_by": "COPY ./linux/awe-httpd-base/httpd.conf /usr/local/apache2/conf/httpd.conf # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2023-01-23T01:46:02Z",
+          "created_by": "USER www-data",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2023-01-23T01:46:02Z",
+          "created_by": "EXPOSE map[8080/tcp:{}]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88",
+          "sha256:76e789f8b8e612e9803b0fe3bd0b43add3579a2a3cc92b341027c1a9a7624681",
+          "sha256:fd423dbc9ddc3140399bfb4dcd4610c96a5ee2d95acf8e155db7cf51f1f9e652",
+          "sha256:105e83b9f61622fb3a91ce62e80d15e79b03fd2d697e47b12adb5f66f1b2c9ec",
+          "sha256:1f5dc4f181643a933ada1c79e1bfc215b1c3ec1c1bb1d315dd712d0946425bab",
+          "sha256:6bae15b283831aa768131b1a8c929bde31426f500ffcb660de5e0b2f2d1c4a81",
+          "sha256:6b30d718e2512b39f35905825368b348fa512a3ca52aaa59140984379fcd6244",
+          "sha256:510d3c79a933b9337350c8857c68870691250253183494d80d5898213ecf7522"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "httpd-foreground"
+        ],
+        "Env": [
+          "PATH=/usr/local/apache2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "HTTPD_PREFIX=/usr/local/apache2",
+          "HTTPD_VERSION=2.4.54",
+          "HTTPD_SHA256=eb397feeefccaf254f8d45de3768d9d68e8e73851c49afd5b7176d1ecf80c340",
+          "HTTPD_PATCHES="
+        ],
+        "Labels": {
+          "project": "awe-dmz-migration",
+          "type": "base"
+        },
+        "User": "www-data",
+        "WorkingDir": "/usr/local/apache2",
+        "StopSignal": "SIGWINCH"
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "jercle/awe-httpd-base:1.0.11 (alpine 3.17.1)",
+      "Class": "os-pkgs",
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2022-24963",
+          "PkgID": "apr@1.7.0-r2",
+          "PkgName": "apr",
+          "InstalledVersion": "1.7.0-r2",
+          "FixedVersion": "1.7.1-r0",
+          "Layer": {
+            "DiffID": "sha256:105e83b9f61622fb3a91ce62e80d15e79b03fd2d697e47b12adb5f66f1b2c9ec"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-24963",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "Integer Overflow or Wraparound vulnerability in apr_encode functions o ...",
+          "Description": "Integer Overflow or Wraparound vulnerability in apr_encode functions of Apache Portable Runtime (APR) allows an attacker to write beyond bounds of a buffer. This issue affects Apache Portable Runtime (APR) version 1.7.0.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24963",
+            "https://github.com/apache/apr/commit/622905ddfa7b45dfca350e13442892de3c1f48e9",
+            "https://lists.apache.org/thread/fw9p6sdncwsjkstwc066vz57xqzfksq9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-24963"
+          ],
+          "PublishedDate": "2023-01-31T16:15:00Z",
+          "LastModifiedDate": "2023-02-07T21:43:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25147",
+          "PkgID": "apr@1.7.0-r2",
+          "PkgName": "apr",
+          "InstalledVersion": "1.7.0-r2",
+          "FixedVersion": "1.7.1-r0",
+          "Layer": {
+            "DiffID": "sha256:105e83b9f61622fb3a91ce62e80d15e79b03fd2d697e47b12adb5f66f1b2c9ec"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25147",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "Integer Overflow or Wraparound vulnerability in apr_base64 functions o ...",
+          "Description": "Integer Overflow or Wraparound vulnerability in apr_base64 functions of Apache Portable Runtime Utility (APR-util) allows an attacker to write beyond bounds of a buffer. This issue affects Apache Portable Runtime Utility (APR-util) 1.6.1 and prior versions.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25147",
+            "https://github.com/apache/apr/commit/850cc4f69639ac9f1c1c9767efaf4883ee3217ce",
+            "https://lists.apache.org/thread/np5gjqlohc4f62lr09vrn61vl44cylh8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25147",
+            "https://ubuntu.com/security/notices/USN-5870-1"
+          ],
+          "PublishedDate": "2023-01-31T16:15:00Z",
+          "LastModifiedDate": "2023-02-07T21:46:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-28331",
+          "PkgID": "apr@1.7.0-r2",
+          "PkgName": "apr",
+          "InstalledVersion": "1.7.0-r2",
+          "FixedVersion": "1.7.1-r0",
+          "Layer": {
+            "DiffID": "sha256:105e83b9f61622fb3a91ce62e80d15e79b03fd2d697e47b12adb5f66f1b2c9ec"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-28331",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Description": "On Windows, Apache Portable Runtime 1.7.0 and earlier may write beyond the end of a stack based buffer in apr_socket_sendv(). This is a result of integer overflow.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://lists.apache.org/thread/5pfdfn7h0vsdo5xzjn97vghp0x42jj2r"
+          ],
+          "PublishedDate": "2023-01-31T16:15:00Z",
+          "LastModifiedDate": "2023-02-08T18:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25147",
+          "PkgID": "apr-util@1.6.1-r14",
+          "PkgName": "apr-util",
+          "InstalledVersion": "1.6.1-r14",
+          "FixedVersion": "1.6.3-r0",
+          "Layer": {
+            "DiffID": "sha256:105e83b9f61622fb3a91ce62e80d15e79b03fd2d697e47b12adb5f66f1b2c9ec"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25147",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "Integer Overflow or Wraparound vulnerability in apr_base64 functions o ...",
+          "Description": "Integer Overflow or Wraparound vulnerability in apr_base64 functions of Apache Portable Runtime Utility (APR-util) allows an attacker to write beyond bounds of a buffer. This issue affects Apache Portable Runtime Utility (APR-util) 1.6.1 and prior versions.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25147",
+            "https://github.com/apache/apr/commit/850cc4f69639ac9f1c1c9767efaf4883ee3217ce",
+            "https://lists.apache.org/thread/np5gjqlohc4f62lr09vrn61vl44cylh8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25147",
+            "https://ubuntu.com/security/notices/USN-5870-1"
+          ],
+          "PublishedDate": "2023-01-31T16:15:00Z",
+          "LastModifiedDate": "2023-02-07T21:46:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-25147",
+          "PkgID": "apr-util-ldap@1.6.1-r14",
+          "PkgName": "apr-util-ldap",
+          "InstalledVersion": "1.6.1-r14",
+          "FixedVersion": "1.6.3-r0",
+          "Layer": {
+            "DiffID": "sha256:105e83b9f61622fb3a91ce62e80d15e79b03fd2d697e47b12adb5f66f1b2c9ec"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-25147",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "Integer Overflow or Wraparound vulnerability in apr_base64 functions o ...",
+          "Description": "Integer Overflow or Wraparound vulnerability in apr_base64 functions of Apache Portable Runtime Utility (APR-util) allows an attacker to write beyond bounds of a buffer. This issue affects Apache Portable Runtime Utility (APR-util) 1.6.1 and prior versions.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25147",
+            "https://github.com/apache/apr/commit/850cc4f69639ac9f1c1c9767efaf4883ee3217ce",
+            "https://lists.apache.org/thread/np5gjqlohc4f62lr09vrn61vl44cylh8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25147",
+            "https://ubuntu.com/security/notices/USN-5870-1"
+          ],
+          "PublishedDate": "2023-01-31T16:15:00Z",
+          "LastModifiedDate": "2023-02-07T21:46:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0286",
+          "PkgID": "libcrypto3@3.0.7-r2",
+          "PkgName": "libcrypto3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0286",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "There is a type confusion vulnerability relating to X.400 address proc ...",
+          "Description": "There is a type confusion vulnerability relating to X.400 address processing inside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but the public structure definition for GENERAL_NAME incorrectly specified the type of the x400Address field as ASN1_TYPE. This field is subsequently interpreted by the OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an ASN1_STRING. When CRL checking is enabled (i.e. the application sets the X509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass arbitrary pointers to a memcmp call, enabling them to read memory contents or enact a denial of service. In most cases, the attack requires the attacker to provide both the certificate chain and CRL, neither of which need to have a valid signature. If the attacker only controls one of these inputs, the other input must already contain an X.400 address as a CRL distribution point, which is uncommon. As such, this vulnerability is most likely to only affect applications which have implemented their own functionality for retrieving CRLs over a network.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-843"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0286",
+            "https://github.com/advisories/GHSA-x4qr-2fvf-3mr5",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-x4qr-2fvf-3mr5",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0286",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0006.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://ubuntu.com/security/notices/USN-5845-1",
+            "https://ubuntu.com/security/notices/USN-5845-2",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4450",
+          "PkgID": "libcrypto3@3.0.7-r2",
+          "PkgName": "libcrypto3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4450",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "The function PEM_read_bio_ex() reads a PEM file from a BIO and parses  ...",
+          "Description": "The function PEM_read_bio_ex() reads a PEM file from a BIO and parses and decodes the \"name\" (e.g. \"CERTIFICATE\"), any header data and the payload data. If the function succeeds then the \"name_out\", \"header\" and \"data\" arguments are populated with pointers to buffers containing the relevant decoded data. The caller is responsible for freeing those buffers. It is possible to construct a PEM file that results in 0 bytes of payload data. In this case PEM_read_bio_ex() will return a failure code but will populate the header argument with a pointer to a buffer that has already been freed. If the caller also frees this buffer then a double free will occur. This will most likely lead to a crash. This could be exploited by an attacker who has the ability to supply malicious PEM files for parsing to achieve a denial of service attack. The functions PEM_read_bio() and PEM_read() are simple wrappers around PEM_read_bio_ex() and therefore these functions are also directly affected. These functions are also called indirectly by a number of other OpenSSL functions including PEM_X509_INFO_read_bio_ex() and SSL_CTX_use_serverinfo_file() which are also vulnerable. Some OpenSSL internal uses of these functions are not vulnerable because the caller does not free the header argument if PEM_read_bio_ex() returns a failure code. These locations include the PEM_read_bio_TYPE() functions as well as the decoders introduced in OpenSSL 3.0. The OpenSSL asn1parse command line application is also impacted by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-415"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4450",
+            "https://github.com/advisories/GHSA-v5w6-wcm8-jm4q",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4450",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0010.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0215",
+          "PkgID": "libcrypto3@3.0.7-r2",
+          "PkgName": "libcrypto3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0215",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "The public API function BIO_new_NDEF is a helper function used for str ...",
+          "Description": "The public API function BIO_new_NDEF is a helper function used for streaming ASN.1 data via a BIO. It is primarily used internally to OpenSSL to support the SMIME, CMS and PKCS7 streaming capabilities, but may also be called directly by end user applications. The function receives a BIO from the caller, prepends a new BIO_f_asn1 filter BIO onto the front of it to form a BIO chain, and then returns the new head of the BIO chain to the caller. Under certain conditions, for example if a CMS recipient public key is invalid, the new filter BIO is freed and the function returns a NULL result indicating a failure. However, in this case, the BIO chain is not properly cleaned up and the BIO passed by the caller still retains internal pointers to the previously freed filter BIO. If the caller then goes on to call BIO_pop() on the BIO then a use-after-free will occur. This will most likely result in a crash. This scenario occurs directly in the internal function B64_write_ASN1() which may cause BIO_new_NDEF() to be called and will subsequently call BIO_pop() on the BIO. This internal function is in turn called by the public API functions PEM_write_bio_ASN1_stream, PEM_write_bio_CMS_stream, PEM_write_bio_PKCS7_stream, SMIME_write_ASN1, SMIME_write_CMS and SMIME_write_PKCS7. Other public API functions that may be impacted by this include i2d_ASN1_bio_stream, BIO_new_CMS, BIO_new_PKCS7, i2d_CMS_bio_stream and i2d_PKCS7_bio_stream. The OpenSSL cms and smime command line applications are similarly affected.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0215",
+            "https://github.com/advisories/GHSA-r7jw-wp68-3xch",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0215",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0009.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://ubuntu.com/security/notices/USN-5845-1",
+            "https://ubuntu.com/security/notices/USN-5845-2",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0216",
+          "PkgID": "libcrypto3@3.0.7-r2",
+          "PkgName": "libcrypto3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0216",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "An invalid pointer dereference on read can be triggered when an applic ...",
+          "Description": "An invalid pointer dereference on read can be triggered when an application tries to load malformed PKCS7 data with the d2i_PKCS7(), d2i_PKCS7_bio() or d2i_PKCS7_fp() functions. The result of the dereference is an application crash which could lead to a denial of service attack. The TLS implementation in OpenSSL does not call this function however third party applications might call these functions on untrusted data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0216",
+            "https://github.com/advisories/GHSA-29xx-hcv2-c4cp",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0216",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0011.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0217",
+          "PkgID": "libcrypto3@3.0.7-r2",
+          "PkgName": "libcrypto3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0217",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "An invalid pointer dereference on read can be triggered when an applic ...",
+          "Description": "An invalid pointer dereference on read can be triggered when an application tries to check a malformed DSA public key by the EVP_PKEY_public_check() function. This will most likely lead to an application crash. This function can be called on public keys supplied from untrusted sources which could allow an attacker to cause a denial of service attack. The TLS implementation in OpenSSL does not call this function but applications might call the function if there are additional security requirements imposed by standards such as FIPS 140-3.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0217",
+            "https://github.com/advisories/GHSA-vxrh-cpg7-8vjr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0217",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0012.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0401",
+          "PkgID": "libcrypto3@3.0.7-r2",
+          "PkgName": "libcrypto3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0401",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "A NULL pointer can be dereferenced when signatures are being verified  ...",
+          "Description": "A NULL pointer can be dereferenced when signatures are being verified on PKCS7 signed or signedAndEnveloped data. In case the hash algorithm used for the signature is known to the OpenSSL library but the implementation of the hash algorithm is not available the digest initialization will fail. There is a missing check for the return value from the initialization function which later leads to invalid usage of the digest API most likely leading to a crash. The unavailability of an algorithm can be caused by using FIPS enabled configuration of providers or more commonly by not loading the legacy provider. PKCS7 data is processed by the SMIME library calls and also by the time stamp (TS) library calls. The TLS implementation in OpenSSL does not call these functions however third party applications would be affected if they call these functions to verify signatures on untrusted data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0401",
+            "https://github.com/advisories/GHSA-vrh7-x64v-7vxq",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0401",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0013.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4203",
+          "PkgID": "libcrypto3@3.0.7-r2",
+          "PkgName": "libcrypto3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4203",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "[openssl: X.509 Name Constraints Read Buffer Overflow]",
+          "Description": "X.509 Name Constraints Read Buffer Overflow",
+          "Severity": "MEDIUM",
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4203",
+            "https://github.com/advisories/GHSA-w67w-mw4j-8qrv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4203",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0008.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4304",
+          "PkgID": "libcrypto3@3.0.7-r2",
+          "PkgName": "libcrypto3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4304",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "A timing based side channel exists in the OpenSSL RSA Decryption imple ...",
+          "Description": "A timing based side channel exists in the OpenSSL RSA Decryption implementation which could be sufficient to recover a plaintext across a network in a Bleichenbacher style attack. To achieve a successful decryption an attacker would have to be able to send a very large number of trial messages for decryption. The vulnerability affects all RSA padding modes: PKCS#1 v1.5, RSA-OEAP and RSASVE. For example, in a TLS connection, RSA is commonly used by a client to send an encrypted pre-master secret to the server. An attacker that had observed a genuine connection between a client and a server could use this flaw to send trial messages to the server and record the time taken to process them. After a sufficiently large number of messages the attacker could recover the pre-master secret used for the original connection and thus be able to decrypt the application data sent over that connection.",
+          "Severity": "MEDIUM",
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4304",
+            "https://github.com/advisories/GHSA-p52g-cm5j-mjv4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4304",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0007.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-09T14:26:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-23916",
+          "PkgID": "libcurl@7.87.0-r1",
+          "PkgName": "libcurl",
+          "InstalledVersion": "7.87.0-r1",
+          "FixedVersion": "7.87.0-r2",
+          "Layer": {
+            "DiffID": "sha256:6b30d718e2512b39f35905825368b348fa512a3ca52aaa59140984379fcd6244"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-23916",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "[curl: HTTP multi-header compression denial of service]",
+          "Description": "HTTP multi-header compression denial of service",
+          "Severity": "MEDIUM",
+          "References": [
+            "https://curl.se/docs/CVE-2023-23916.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23916"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2023-23914",
+          "PkgID": "libcurl@7.87.0-r1",
+          "PkgName": "libcurl",
+          "InstalledVersion": "7.87.0-r1",
+          "FixedVersion": "7.87.0-r2",
+          "Layer": {
+            "DiffID": "sha256:6b30d718e2512b39f35905825368b348fa512a3ca52aaa59140984379fcd6244"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-23914",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "[curl: HSTS ignored on multiple requests]",
+          "Description": "HSTS ignored on multiple requests",
+          "Severity": "LOW",
+          "References": [
+            "https://curl.se/docs/CVE-2023-23914.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23914"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2023-23915",
+          "PkgID": "libcurl@7.87.0-r1",
+          "PkgName": "libcurl",
+          "InstalledVersion": "7.87.0-r1",
+          "FixedVersion": "7.87.0-r2",
+          "Layer": {
+            "DiffID": "sha256:6b30d718e2512b39f35905825368b348fa512a3ca52aaa59140984379fcd6244"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-23915",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "[curl: HSTS amnesia with --parallel]",
+          "Description": "HSTS amnesia with --parallel",
+          "Severity": "LOW",
+          "References": [
+            "https://curl.se/docs/CVE-2023-23915.html",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23915"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0286",
+          "PkgID": "libssl3@3.0.7-r2",
+          "PkgName": "libssl3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0286",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "There is a type confusion vulnerability relating to X.400 address proc ...",
+          "Description": "There is a type confusion vulnerability relating to X.400 address processing inside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but the public structure definition for GENERAL_NAME incorrectly specified the type of the x400Address field as ASN1_TYPE. This field is subsequently interpreted by the OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an ASN1_STRING. When CRL checking is enabled (i.e. the application sets the X509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass arbitrary pointers to a memcmp call, enabling them to read memory contents or enact a denial of service. In most cases, the attack requires the attacker to provide both the certificate chain and CRL, neither of which need to have a valid signature. If the attacker only controls one of these inputs, the other input must already contain an X.400 address as a CRL distribution point, which is uncommon. As such, this vulnerability is most likely to only affect applications which have implemented their own functionality for retrieving CRLs over a network.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-843"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+              "V3Score": 9.1
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0286",
+            "https://github.com/advisories/GHSA-x4qr-2fvf-3mr5",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-x4qr-2fvf-3mr5",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0286",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0006.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://ubuntu.com/security/notices/USN-5845-1",
+            "https://ubuntu.com/security/notices/USN-5845-2",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4450",
+          "PkgID": "libssl3@3.0.7-r2",
+          "PkgName": "libssl3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4450",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "The function PEM_read_bio_ex() reads a PEM file from a BIO and parses  ...",
+          "Description": "The function PEM_read_bio_ex() reads a PEM file from a BIO and parses and decodes the \"name\" (e.g. \"CERTIFICATE\"), any header data and the payload data. If the function succeeds then the \"name_out\", \"header\" and \"data\" arguments are populated with pointers to buffers containing the relevant decoded data. The caller is responsible for freeing those buffers. It is possible to construct a PEM file that results in 0 bytes of payload data. In this case PEM_read_bio_ex() will return a failure code but will populate the header argument with a pointer to a buffer that has already been freed. If the caller also frees this buffer then a double free will occur. This will most likely lead to a crash. This could be exploited by an attacker who has the ability to supply malicious PEM files for parsing to achieve a denial of service attack. The functions PEM_read_bio() and PEM_read() are simple wrappers around PEM_read_bio_ex() and therefore these functions are also directly affected. These functions are also called indirectly by a number of other OpenSSL functions including PEM_X509_INFO_read_bio_ex() and SSL_CTX_use_serverinfo_file() which are also vulnerable. Some OpenSSL internal uses of these functions are not vulnerable because the caller does not free the header argument if PEM_read_bio_ex() returns a failure code. These locations include the PEM_read_bio_TYPE() functions as well as the decoders introduced in OpenSSL 3.0. The OpenSSL asn1parse command line application is also impacted by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-415"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4450",
+            "https://github.com/advisories/GHSA-v5w6-wcm8-jm4q",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4450",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0010.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0215",
+          "PkgID": "libssl3@3.0.7-r2",
+          "PkgName": "libssl3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0215",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "The public API function BIO_new_NDEF is a helper function used for str ...",
+          "Description": "The public API function BIO_new_NDEF is a helper function used for streaming ASN.1 data via a BIO. It is primarily used internally to OpenSSL to support the SMIME, CMS and PKCS7 streaming capabilities, but may also be called directly by end user applications. The function receives a BIO from the caller, prepends a new BIO_f_asn1 filter BIO onto the front of it to form a BIO chain, and then returns the new head of the BIO chain to the caller. Under certain conditions, for example if a CMS recipient public key is invalid, the new filter BIO is freed and the function returns a NULL result indicating a failure. However, in this case, the BIO chain is not properly cleaned up and the BIO passed by the caller still retains internal pointers to the previously freed filter BIO. If the caller then goes on to call BIO_pop() on the BIO then a use-after-free will occur. This will most likely result in a crash. This scenario occurs directly in the internal function B64_write_ASN1() which may cause BIO_new_NDEF() to be called and will subsequently call BIO_pop() on the BIO. This internal function is in turn called by the public API functions PEM_write_bio_ASN1_stream, PEM_write_bio_CMS_stream, PEM_write_bio_PKCS7_stream, SMIME_write_ASN1, SMIME_write_CMS and SMIME_write_PKCS7. Other public API functions that may be impacted by this include i2d_ASN1_bio_stream, BIO_new_CMS, BIO_new_PKCS7, i2d_CMS_bio_stream and i2d_PKCS7_bio_stream. The OpenSSL cms and smime command line applications are similarly affected.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0215",
+            "https://github.com/advisories/GHSA-r7jw-wp68-3xch",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0215",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0009.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://ubuntu.com/security/notices/USN-5845-1",
+            "https://ubuntu.com/security/notices/USN-5845-2",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0216",
+          "PkgID": "libssl3@3.0.7-r2",
+          "PkgName": "libssl3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0216",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "An invalid pointer dereference on read can be triggered when an applic ...",
+          "Description": "An invalid pointer dereference on read can be triggered when an application tries to load malformed PKCS7 data with the d2i_PKCS7(), d2i_PKCS7_bio() or d2i_PKCS7_fp() functions. The result of the dereference is an application crash which could lead to a denial of service attack. The TLS implementation in OpenSSL does not call this function however third party applications might call these functions on untrusted data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0216",
+            "https://github.com/advisories/GHSA-29xx-hcv2-c4cp",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0216",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0011.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0217",
+          "PkgID": "libssl3@3.0.7-r2",
+          "PkgName": "libssl3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0217",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "An invalid pointer dereference on read can be triggered when an applic ...",
+          "Description": "An invalid pointer dereference on read can be triggered when an application tries to check a malformed DSA public key by the EVP_PKEY_public_check() function. This will most likely lead to an application crash. This function can be called on public keys supplied from untrusted sources which could allow an attacker to cause a denial of service attack. The TLS implementation in OpenSSL does not call this function but applications might call the function if there are additional security requirements imposed by standards such as FIPS 140-3.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0217",
+            "https://github.com/advisories/GHSA-vxrh-cpg7-8vjr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0217",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0012.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-0401",
+          "PkgID": "libssl3@3.0.7-r2",
+          "PkgName": "libssl3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-0401",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "A NULL pointer can be dereferenced when signatures are being verified  ...",
+          "Description": "A NULL pointer can be dereferenced when signatures are being verified on PKCS7 signed or signedAndEnveloped data. In case the hash algorithm used for the signature is known to the OpenSSL library but the implementation of the hash algorithm is not available the digest initialization will fail. There is a missing check for the return value from the initialization function which later leads to invalid usage of the digest API most likely leading to a crash. The unavailability of an algorithm can be caused by using FIPS enabled configuration of providers or more commonly by not loading the legacy provider. PKCS7 data is processed by the SMIME library calls and also by the time stamp (TS) library calls. The TLS implementation in OpenSSL does not call these functions however third party applications would be affected if they call these functions to verify signatures on untrusted data.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0401",
+            "https://github.com/advisories/GHSA-vrh7-x64v-7vxq",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-0401",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0013.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-18T21:48:00Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4203",
+          "PkgID": "libssl3@3.0.7-r2",
+          "PkgName": "libssl3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4203",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "[openssl: X.509 Name Constraints Read Buffer Overflow]",
+          "Description": "X.509 Name Constraints Read Buffer Overflow",
+          "Severity": "MEDIUM",
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4203",
+            "https://github.com/advisories/GHSA-w67w-mw4j-8qrv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4203",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0008.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2022-4304",
+          "PkgID": "libssl3@3.0.7-r2",
+          "PkgName": "libssl3",
+          "InstalledVersion": "3.0.7-r2",
+          "FixedVersion": "3.0.8-r0",
+          "Layer": {
+            "DiffID": "sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-4304",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "A timing based side channel exists in the OpenSSL RSA Decryption imple ...",
+          "Description": "A timing based side channel exists in the OpenSSL RSA Decryption implementation which could be sufficient to recover a plaintext across a network in a Bleichenbacher style attack. To achieve a successful decryption an attacker would have to be able to send a very large number of trial messages for decryption. The vulnerability affects all RSA padding modes: PKCS#1 v1.5, RSA-OEAP and RSASVE. For example, in a TLS connection, RSA is commonly used by a client to send an encrypted pre-master secret to the server. An attacker that had observed a genuine connection between a client and a server could use this flaw to send trial messages to the server and record the time taken to process them. After a sufficiently large number of messages the attacker could recover the pre-master secret used for the original connection and thus be able to decrypt the application data sent over that connection.",
+          "Severity": "MEDIUM",
+          "References": [
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4304",
+            "https://github.com/advisories/GHSA-p52g-cm5j-mjv4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-4304",
+            "https://rustsec.org/advisories/RUSTSEC-2023-0007.html",
+            "https://ubuntu.com/security/notices/USN-5844-1",
+            "https://www.openssl.org/news/secadv/20230207.txt"
+          ],
+          "PublishedDate": "2023-02-08T20:15:00Z",
+          "LastModifiedDate": "2023-02-09T14:26:00Z"
+        }
+      ]
+    }
+  ]
+}
